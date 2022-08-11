@@ -1,0 +1,38 @@
+
+// define menu in xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/new_game"
+          android:icon="@drawable/ic_new_game"
+          android:title="@string/new_game"
+          android:showAsAction="ifRoom"/>
+</menu>
+
+//show actions options
+showAsAction="always"
+showAsAction="ifRoom"
+showAsAction=“never”
+
+
+
+// create menu
+
+public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.main_menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+//select from menu
+public override bool OnOptionsItemSelected(IMenuItem item)
+{
+    switch (item.ItemId)
+    {
+        case Resource.Id.new_game:
+            //do something
+            return true;
+
+    }
+    return base.OnOptionsItemSelected(item);
+}
